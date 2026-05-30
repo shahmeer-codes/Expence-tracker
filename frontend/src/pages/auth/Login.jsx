@@ -1,7 +1,7 @@
 const Login = () => {
   return (
     <div className="flex justify-center items-center h-screen w-screen bg-black">
-      <form className="bg-blue-500 p-8 rounded-3xl flex flex-col gap-4 w-96">
+      <form className="bg-purple-500 p-8 rounded-3xl flex flex-col gap-4 w-96">
         <h1 className="text-2xl font-bold text-white text-center">
           Login
         </h1>
