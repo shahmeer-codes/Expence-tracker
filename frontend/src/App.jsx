@@ -7,7 +7,7 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 
 import { GlobalProvider } from './context/GlobalState';
-import './styles/App.css';
+
 
 function App() {
   return (
