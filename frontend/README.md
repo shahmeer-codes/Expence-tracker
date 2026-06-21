@@ -1,16 +1,51 @@
-# React + Vite
+# 💳 Modern React Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, responsive Expense Tracker built entirely with pure React and vanilla CSS. This project demonstrates state management using the Context API and hooks without relying on external state libraries like Redux.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Add Transactions**: Input income (positive numbers) and expenses (negative numbers).
+* **Dynamic Balances**: Automatically calculates total balance, total income, and total expenses.
+* **Transaction Filtering**: Easily filter views by All, Income, or Expense.
+* **Persistent Storage**: Automatically saves all transactions to the browser's `localStorage` so data is not lost on reload.
+* **Modern UI**: Clean, fintech-style interface built entirely from scratch with vanilla CSS (No Tailwind, Bootstrap, or component libraries).
 
-## React Compiler
+## 🚀 How to Run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  **Clone the repository** (if hosted on GitHub) or create the project folder locally.
+2.  **Initialize the React app** (if starting from scratch):
+    ```bash
+    npx create-react-app expense-tracker
+    ```
+3.  **Replace** the `src` folder with the files provided in this repository.
+4.  **Install dependencies** (just standard React):
+    ```bash
+    npm install
+    ```
+5.  **Start the development server**:
+    ```bash
+    npm start
+    ```
+    The app will run at `http://localhost:3000`.
 
-## Expanding the ESLint configuration
+## 📁 Folder Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+expense-tracker/
+├── src/
+│   ├── App.js                 # Main layout wrapper
+│   ├── index.js               # React root renderer
+│   ├── components/            # UI Components
+│   │   ├── Header.js
+│   │   ├── Balance.js
+│   │   ├── IncomeExpense.js
+│   │   ├── TransactionList.js
+│   │   ├── TransactionItem.js
+│   │   ├── AddTransaction.js
+│   │   └── Filter.js
+│   ├── context/               # Global State Management
+│   │   ├── AppReducer.js      # Reducer function for state updates
+│   │   └── GlobalState.js     # Context provider & actions
+│   └── styles/
+│       └── App.css            # Vanilla CSS styling
+└── README.md
