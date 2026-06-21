@@ -1,21 +1,34 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { IncomeExpense } from './components/IncomeExpense';
+import { Filter } from './components/Filter';
+import { TransactionList } from './components/TransactionList';
+import { AddTransaction } from './components/AddTransaction';
 
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
-import AddExpense from "./pages/AddExpense";
-import AddIncome from "./pages/AddIncome";
+import { GlobalProvider } from './context/GlobalState';
+import './styles/App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/add-expense" element={<AddExpense />} />
-          <Route path="/add-income" element={<AddIncome />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <GlobalProvider>
+      <div className="app-wrapper">
+        <Header />
+        <div className="main-content">
+          <div className="top-section">
+            <Balance />
+            <IncomeExpense />
+          </div>
+          <div className="bottom-section">
+            <AddTransaction />
+            <div className="transactions-section">
+              <Filter />
+              <TransactionList />
+            </div>
+          </div>
+        </div>
+      </div>
+    </GlobalProvider>
   );
 }
 
